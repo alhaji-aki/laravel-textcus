@@ -8,6 +8,7 @@
         "textcus"
     ],
     "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "Abdul Kudus",
