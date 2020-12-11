@@ -6,7 +6,7 @@ use Illuminate\Notifications\ChannelManager;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\ServiceProvider;
 
-class TextCusServiceProvider extends ServiceProvider
+class TextcusServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
