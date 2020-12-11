@@ -1,0 +1,50 @@
+{
+    "name": "alhaji-aki/laravel-textcus",
+    "description": "Laravel wrapper for textcus sms api",
+    "keywords": [
+        "laravel",
+        "sms",
+        "notifications",
+        "textcus"
+    ],
+    "type": "library",
+    "authors": [
+        {
+            "name": "Abdul Kudus",
+            "email": "abdulkudus2922@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "AlhajiAki\\Textcus\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AlhajiAki\\Textcus\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AlhajiAki\\TextCus\\TextCusServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "php": ">=7.1",
+        "guzzlehttp/guzzle": "^7.0.1",
+        "illuminate/notifications": "~6.0 || ~7.0 || ~8.0",
+        "illuminate/support": "~6.0 || ~7.0 || ~8.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.3",
+        "orchestra/testbench": "^5.0|^6.0",
+        "phpunit/phpunit": "^9.1"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
