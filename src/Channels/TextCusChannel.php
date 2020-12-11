@@ -2,15 +2,15 @@
 
 namespace AlhajiAki\Textcus\Channels;
 
-use AlhajiAki\Textcus\TextCusClient;
+use AlhajiAki\Textcus\TextcusClient;
 use Illuminate\Notifications\Notification;
 
-class TextCusChannel
+class TextcusChannel
 {
     /**
-     * The TextCus client instance.
+     * The Textcus client instance.
      *
-     * @var \AlhajiAki\TextCus\TextCusClient
+     * @var \AlhajiAki\Textcus\TextcusClient
      */
     protected $textCus;
 
@@ -22,13 +22,13 @@ class TextCusChannel
     protected $from;
 
     /**
-     * Create a new TextCus channel instance.
+     * Create a new Textcus channel instance.
      *
-     * @param  \AlhajiAki\TextCus\TextCusClient $textCus
+     * @param  \AlhajiAki\Textcus\TextcusClient $textCus
      * @param  string  $from
      * @return void
      */
-    public function __construct(TextCusClient $textCus, $from)
+    public function __construct(TextcusClient $textCus, $from)
     {
         $this->textCus = $textCus;
         $this->from = $from;

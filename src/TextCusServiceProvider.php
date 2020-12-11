@@ -17,8 +17,8 @@ class TextcusServiceProvider extends ServiceProvider
     {
         Notification::resolved(function (ChannelManager $service) {
             $service->extend('textcus', function ($app) {
-                return new Channels\TextCusChannel(
-                    $this->app->make(TextCusClient::class),
+                return new Channels\TextcusChannel(
+                    $this->app->make(TextcusClient::class),
                     $this->app['config']['services.textcus.sender_id']
                 );
             });

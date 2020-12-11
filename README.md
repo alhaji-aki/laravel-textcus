@@ -60,7 +60,7 @@ You can use the channel in your `via()` method inside the notification:
 
 ```php
 use Illuminate\Notifications\Notification;
-use AlhajiAki\Textcus\Messages\TextCusMessage;
+use AlhajiAki\Textcus\Messages\TextcusMessage;
 
 class AccountApproved extends Notification
 {
@@ -71,7 +71,7 @@ class AccountApproved extends Notification
 
     public function toTextcus($notifiable)
     {
-        return (new TextCusMessage())
+        return (new TextcusMessage())
             ->content("Your {$notifiable->service} account was approved!");
     }
 }

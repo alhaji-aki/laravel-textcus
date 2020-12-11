@@ -4,6 +4,6 @@ namespace AlhajiAki\Textcus\Exceptions;
 
 use Exception;
 
-class TextCusException extends Exception
+class TextcusException extends Exception
 {
 }

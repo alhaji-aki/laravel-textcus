@@ -2,10 +2,10 @@
 
 namespace AlhajiAki\Textcus;
 
-use AlhajiAki\Textcus\Exceptions\TextCusException;
+use AlhajiAki\Textcus\Exceptions\TextcusException;
 use GuzzleHttp\Client;
 
-class TextCusClient
+class TextcusClient
 {
     public function send($from, $to, $content)
     {
@@ -20,7 +20,7 @@ class TextCusClient
         $response = json_decode($response->getBody()->getContents());
 
         if ($response->status !== '0000') {
-            throw new TextCusException($response->error ?? $response->warning ?? $response->message ?? 'Unable to send sms');
+            throw new TextcusException($response->error ?? $response->warning ?? $response->message ?? 'Unable to send sms');
         }
 
         return $response;

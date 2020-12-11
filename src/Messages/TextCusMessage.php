@@ -2,7 +2,7 @@
 
 namespace AlhajiAki\Textcus\Messages;
 
-class TextCusMessage
+class TextcusMessage
 {
     /**
      * The message content.

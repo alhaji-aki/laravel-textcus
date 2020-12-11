@@ -2,27 +2,27 @@
 
 namespace AlhajiAki\Textcus\Tests;
 
-use AlhajiAki\Textcus\Channels\TextCusChannel;
-use AlhajiAki\Textcus\Messages\TextCusMessage;
-use AlhajiAki\Textcus\TextCusClient;
+use AlhajiAki\Textcus\Channels\TextcusChannel;
+use AlhajiAki\Textcus\Messages\TextcusMessage;
+use AlhajiAki\Textcus\TextcusClient;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Notifications\Notification;
 use Mockery as m;
 use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
 use \Orchestra\Testbench\TestCase as Orchestra;
 
-class TextCusChannelTest extends Orchestra
+class TextcusChannelTest extends Orchestra
 {
     use MockeryPHPUnitIntegration;
 
     /** @test */
     public function sms_is_sent_via_textcus()
     {
-        $notification = new NotificationTextCusChannelTestNotification;
-        $notifiable = new NotificationTextCusChannelTestNotifiable;
+        $notification = new NotificationTextcusChannelTestNotification;
+        $notifiable = new NotificationTextcusChannelTestNotifiable;
 
-        $channel = new TextCusChannel(
-            $textcus = m::mock(TextCusClient::class),
+        $channel = new TextcusChannel(
+            $textcus = m::mock(TextcusClient::class),
             '4444444444'
         );
 
@@ -36,11 +36,11 @@ class TextCusChannelTest extends Orchestra
     /** @test */
     public function sms_is_sent_via_textcus_with_custom_from()
     {
-        $notification = new NotificationTextCusChannelTestCustomFromNotification;
-        $notifiable = new NotificationTextCusChannelTestNotifiable;
+        $notification = new NotificationTextcusChannelTestCustomFromNotification;
+        $notifiable = new NotificationTextcusChannelTestNotifiable;
 
-        $channel = new TextCusChannel(
-            $textcus = m::mock(TextCusClient::class),
+        $channel = new TextcusChannel(
+            $textcus = m::mock(TextcusClient::class),
             '4444444444'
         );
 
@@ -52,30 +52,30 @@ class TextCusChannelTest extends Orchestra
     }
 }
 
-class NotificationTextCusChannelTestNotifiable
+class NotificationTextcusChannelTestNotifiable
 {
     use Notifiable;
 
     public $mobile = '5555555555';
 
-    public function routeNotificationForTextCus($notification)
+    public function routeNotificationForTextcus($notification)
     {
         return $this->mobile;
     }
 }
 
-class NotificationTextCusChannelTestNotification extends Notification
+class NotificationTextcusChannelTestNotification extends Notification
 {
-    public function toTextCus($notifiable)
+    public function toTextcus($notifiable)
     {
-        return new TextCusMessage('this is my message');
+        return new TextcusMessage('this is my message');
     }
 }
 
-class NotificationTextCusChannelTestCustomFromNotification extends Notification
+class NotificationTextcusChannelTestCustomFromNotification extends Notification
 {
-    public function toTextCus($notifiable)
+    public function toTextcus($notifiable)
     {
-        return (new TextCusMessage('this is my message'))->from('5554443333');
+        return (new TextcusMessage('this is my message'))->from('5554443333');
     }
 }
